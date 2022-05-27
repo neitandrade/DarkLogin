@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+body{
+    margin: 0; /*remove borda padrão de 8px do body*/
+    font-family: 'Inconsolata', monospace;
+}
+
+body * {
+    box-sizing: border-box;
+}
+/*qualquer estilo aqui dentro servirá para tudo dentro do bodu */
+
+.main-login{
+    width: 100vw; /*% da largura da viewporte*/
+    height: 100vh; /*% da altura da viewporte*/
+    background-color: #201b2c;
+    display: flex; /*organiza lado a lado os conteúdos*/
+    justify-content: center; /*centralizar no eixo x*/
+    align-items: center;
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*organizar em coluna mesmo com display:flex*/
+}
+
+.left-login > h1{
+    color: #77ffc0;
+    font-size: 3vw;
+}
+
+.left-login-img{
+    width: 32vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{
+    width: 60%; /*usa %, e não vw, pois o tamanho que quero usar é o do proprio vw, 60% do vw!*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px; /*eixo y e x da borda do card*/
+    background-color: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056; /*o 1º é x pra esquerda, o 2º é y para baixo ou cima(+ ou -), o 3º é blur, o 4º é cor*/
+}
+
+.card-login > h1{
+    color: #00ff88;
+    font-weight: 800; /*bolder*/
+    margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*inverte os eixos para align e j.content*/
+    align-items: flex-start; /*queremos o label mais esquerda possível do imput */
+    justify-content: center;
+    margin: 10px 0px ;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none; /*remove a linha da borda do input*/
+    box-sizing: border-box; /*colisão entre divs para nao ultrapassarem */
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px; /*distancia entre input e label */
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%; /*ocupar todo o card*/
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #2b134b;
+    background-color: #00ff88;
+    cursor: pointer; /*cursor no mão-botão*/
+    box-shadow: 0px 10px 40px -12px /*spread */ #00ff8052;
+}
+
+@media only screen and (max-width: 950px){
+    .card-login{width: 85%
+    }
+} /* edições add para 950px */
+
+@media only screen and (max-width: 600px){
+    .main-login{flex-direction: column;}
+    .left-login > h1{display: none;}
+    .left-login{width: 100%; height: auto;}
+    .right-login{width: 100%; height: auto;}
+    .left-login-img{width: 50vw;}
+    .card-login{width: 90%;
+    }
+} /* agrupar itens em coluna para celular 600px*/
